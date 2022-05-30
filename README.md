@@ -1,16 +1,20 @@
-# flutter_xtream_movies
+## Flutter Components
 
-A new Flutter project.
+Esta es una aplicación de peliculas muy al estilo de [https://www.imdb.com](https://www.imdb.com) que contendra un gran catálogo de peliculas y series de tv, información de actores y buscador, siguiendo el cursor de Fernando Herrera [https://www.udemy.com/course/flutter-ios-android-fernando-herrera/.](https://www.udemy.com/course/flutter-ios-android-fernando-herrera/.) El proposito final es aprender a desarrollar aplicaciones móviles con Flutter y poder desplegarlas en sus respectivas tiendas. 
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## Levantar el proyecto
 
-A few resources to get you started if this is your first Flutter project:
+Puede levantar el proyecto con visual studio code ejecutando comand + shift + P. Luego "Select Device".
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+<img src="https://github.com/eivanphils/flutter-app-counter/blob/master/assets/select_device.png" width="500">     
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Luego abre el archivo main.dart y presiona F5 o fn + F5 app. 
+
+
+**Nota**: es importante tener instalado todas las configuraciones necesarias para flutter
+
+[https://docs.flutter.dev/get-started/install](https://docs.flutter.dev/get-started/install)
+
+## Comming Soon
