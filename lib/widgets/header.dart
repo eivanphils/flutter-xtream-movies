@@ -16,8 +16,7 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: true,
       title: const Image(
         image: AssetImage('assets/xtream.png'),
-        // height: 100,
-        width: 150,
+        width: 100,
         
       ),
       actions: widgets,
