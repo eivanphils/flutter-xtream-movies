@@ -13,7 +13,7 @@ class UserCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return GestureDetector(
       onTap: () => Navigator.pushNamed(context, 'movies'),
       child: Padding(
         padding: const EdgeInsets.all(8.0),

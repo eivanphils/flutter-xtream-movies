@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_xtream_movies/router/app_routes.dart';
 
+
+import 'package:flutter_xtream_movies/router/app_routes.dart';
 import 'package:flutter_xtream_movies/widgets/widgets.dart';
 
 class MoviesScreen extends StatelessWidget {
@@ -12,19 +13,22 @@ class MoviesScreen extends StatelessWidget {
     return Scaffold(
       appBar: Header(
         appBar: AppBar(),
+        leading: IconButton(
+          icon: const Icon(Icons.settings),
+          onPressed: () => Navigator.pushNamed(context, AppRoutes.settingsRoute),
+        ),
         widgets: [
-          Padding(
-            padding: const EdgeInsets.only(right: 10),
-            child: IconButton(
-              icon: const Icon(Icons.settings),
-              onPressed: () => Navigator.pushNamed(context, AppRoutes.settingsRoute),
-            ),
-          )
+          IconButton(
+            icon: const Icon(Icons.search_outlined),
+            onPressed: () => print('searching'),
+          ),
         ]
       ),
-      body: const Center(
-         child: Text('MoviesScreen'),
-      ),
+      body: Column(
+        children: const [
+          CardSwiper()
+        ]
+      )
     );
   }
 }
