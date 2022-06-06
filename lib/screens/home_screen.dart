@@ -16,6 +16,7 @@ class HomeScreen extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          // Titulo central del home
           const Center(
             child: Padding(
               padding: EdgeInsets.only(bottom: 10),
@@ -23,6 +24,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
       
+          // Cards de usuarios
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: const [
