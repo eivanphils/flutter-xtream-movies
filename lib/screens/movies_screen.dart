@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_xtream_movies/router/app_routes.dart';
-import 'package:flutter_xtream_movies/theme/app_theme.dart';
 
 import 'package:flutter_xtream_movies/widgets/widgets.dart';
 
