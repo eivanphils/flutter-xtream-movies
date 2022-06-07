@@ -33,9 +33,6 @@ class MoviesScreen extends StatelessWidget {
             // Slider de peliculas
             MovieSlider(),
             MovieSlider(),
-            MovieSlider(),
-            MovieSlider(),
-            MovieSlider(),
             
           ]
         ),
