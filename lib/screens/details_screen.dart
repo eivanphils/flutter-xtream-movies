@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_xtream_movies/theme/app_theme.dart';
+import 'package:flutter_xtream_movies/widgets/widgets.dart';
 
 class DetailsScreen extends StatelessWidget {
   const DetailsScreen({Key? key}) : super(key: key);
@@ -15,7 +17,12 @@ class DetailsScreen extends StatelessWidget {
           const _CustomAppBar(),
           SliverList(
             delegate: SliverChildListDelegate([
-              const _PosterAndTitle()
+              const _PosterAndTitle(),
+              const _OverView(),
+              const _OverView(),
+              const _OverView(),
+
+              CastingCard()
             ])
           )
         ],
@@ -42,6 +49,7 @@ class _CustomAppBar extends StatelessWidget {
           color: Colors.black38,
           alignment: Alignment.bottomCenter,
           width: double.infinity,
+          padding: const EdgeInsets.only(bottom: 18),
           child: const Text(
             'movie.title',
             style: TextStyle(fontSize: 16),
@@ -96,8 +104,25 @@ class _PosterAndTitle extends StatelessWidget {
                 ],
               )
             ],
-          )
+          ),
         ]
+      ),
+    );
+  }
+}
+
+class _OverView extends StatelessWidget {
+  const _OverView({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final TextTheme textTheme = Theme.of(context).textTheme;
+
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      child: Text('Dolore exercitation dolor labore ea ex magna dolore ea. Consequat sunt mollit ullamco officia mollit sunt sint proident veniam id consequat voluptate aliquip. Nulla mollit in elit est aute reprehenderit. Consectetur ad ex cillum exercitation sunt cupidatat ullamco eiusmod sunt elit exercitation velit amet consequat.',
+        style: textTheme.subtitle1,
+        textAlign: TextAlign.justify
       ),
     );
   }
