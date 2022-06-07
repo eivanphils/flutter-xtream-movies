@@ -52,6 +52,8 @@ class _MoviePoster extends StatelessWidget {
                 placeholder: AssetImage('assets/no-image.jpg'),
                 image: NetworkImage('https://via.placeholder.com/300x400'),
                 fit: BoxFit.cover,
+                width: 130,
+                height: 180,
               ),
             ),
           ),

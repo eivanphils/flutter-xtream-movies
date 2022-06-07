@@ -20,8 +20,6 @@ class AppTheme {
       )
     ),
 
-
-
     // TextButtons
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
