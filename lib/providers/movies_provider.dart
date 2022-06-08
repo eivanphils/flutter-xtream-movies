@@ -2,51 +2,35 @@ import 'package:flutter/material.dart';
 
 import 'package:http/http.dart' as http;
 
-import 'package:flutter_xtream_movies/models/movies_request.dart';
+import 'package:flutter_xtream_movies/models/now_playing_response.dart';
 
 class MoviesProvider extends ChangeNotifier {
+  final String _baseUrl = 'api.themoviedb.org';
+  final String _apiKey = 'da667a4fafb64048d77c2deeecb0ed26';
+  final String _language = 'en-ES';
+
   MoviesProvider() {
     print('MoviesProvider inicializado');
 
     getMoviesNowPlaying();
   }
 
-  getMoviesNowPlaying() async {
+  void getMoviesNowPlaying() async {
     print('getNowPlaying');
-
-    final url = Uri.parse(
-        'https://api.themoviedb.org/3/movie/now_playing?api_key=da667a4fafb64048d77c2deeecb0ed26&language=en-ES&external_source=imdb_id');
-
-    http.get(url).then((response) {
-      final reqResRespuesta = moviesRequestFromJson(response.body);
-
-      print(reqResRespuesta);
-      print('dates: ${reqResRespuesta.dates}');
-      print('totalPages: ${reqResRespuesta.totalPages}');
-      print('totalResults: ${reqResRespuesta.totalResults}');
-      print('result[0]: ${reqResRespuesta.results[0].adult}');
+    final url = Uri.https(_baseUrl, '3/movie/now_playing', {
+      'api_key' : _apiKey,
+      'language': _language,
+      'page'    : '1'
     });
-    
-  
-    /* ejemplo con el await
-    final url = Uri.https(
-      'api.themoviedb.org',
-      '3/movie/now_playing',
-      {
-        'api_key': 'da667a4fafb64048d77c2deeecb0ed26',
-        'language': 'en-ES',
-        'page': '1'
-      }
-    );
     final response = await http.get(url);
-    final reqResRespuesta = moviesRequestFromJson(response.body);
+    final nowPlayingResponse = nowPlayingResponseFromJson(response.body);
 
 
-    print(reqResRespuesta);
-    print('dates: ${reqResRespuesta.dates}');
-    print('totalPages: ${reqResRespuesta.totalPages}');
-    print('totalResults: ${reqResRespuesta.totalResults}');
-    print('result[0]: ${reqResRespuesta.results[0].adult}');
-    */
+    print(nowPlayingResponse);
+    print('dates: ${nowPlayingResponse.dates}');
+    print('totalPages: ${nowPlayingResponse.totalPages}');
+    print('totalResults: ${nowPlayingResponse.totalResults}');
+    print('result[0]: ${nowPlayingResponse.results[0].adult}');
+    
   }
 }

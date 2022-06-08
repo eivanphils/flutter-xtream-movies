@@ -1,0 +1,3 @@
+export 'package:flutter_xtream_movies/models/movie.dart';
+export 'package:flutter_xtream_movies/models/now_playing_response.dart';
+export 'package:flutter_xtream_movies/models/route_option.dart';

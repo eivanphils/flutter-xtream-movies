@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_xtream_movies/models/route_option.dart';
+import 'package:flutter_xtream_movies/models/models.dart';
 import 'package:flutter_xtream_movies/screens/screens.dart';
 
 class AppRoutes {
