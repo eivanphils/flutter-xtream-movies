@@ -22,7 +22,7 @@ class DetailsScreen extends StatelessWidget {
 
             // Enviado como argumento con nombre
             _OverView(movie: movie),
-            const CastingCard()
+            CastingCard(movieId: movie.id)
           ]))
         ],
       ),
