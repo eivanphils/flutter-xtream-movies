@@ -7,14 +7,11 @@ import 'package:flutter_xtream_movies/providers/movies_provider.dart';
 
 class CastingCard extends StatelessWidget {
   final int movieId;
-  const CastingCard({
-    Key? key,
-    required this.movieId
-  }) : super(key: key);
+  const CastingCard({Key? key, required this.movieId}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-  final moviesProvider = Provider.of<MoviesProvider>(context, listen: false);
+    final moviesProvider = Provider.of<MoviesProvider>(context, listen: false);
 
     return FutureBuilder(
       future: moviesProvider.getMovieCast(movieId),
@@ -27,23 +24,27 @@ class CastingCard extends StatelessWidget {
           );
         }
 
-        final cast = snapshot.data!;
+        final castList = snapshot.data!;
 
         return Container(
           margin: const EdgeInsets.only(bottom: 30),
           width: double.infinity,
-          height: 180,
+          height: 190,
           child: ListView.builder(
               itemCount: 10,
               scrollDirection: Axis.horizontal,
-              itemBuilder: (_, int index) => _CastCard()),
-        ); 
+              itemBuilder: (_, int index) => _CastCard(castList[index])),
+        );
       },
     );
   }
 }
 
 class _CastCard extends StatelessWidget {
+  final Cast cast;
+
+  const _CastCard(this.cast, {Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -54,17 +55,17 @@ class _CastCard extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(20),
-            child: const FadeInImage(
-              placeholder: AssetImage('assets/no-image.jpg'),
-              image: NetworkImage('https://via.placeholder.com/150x300'),
+            child: FadeInImage(
+              placeholder: const AssetImage('assets/no-image.jpg'),
+              image: NetworkImage(cast.fullProfileImg),
               height: 140,
               width: 90,
               fit: BoxFit.cover,
             ),
           ),
           const SizedBox(height: 5),
-          const Text(
-            'movie.actor adad ad asdasdsd',
+          Text(
+            '${cast.name} (${cast.character})',
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
             textAlign: TextAlign.center,

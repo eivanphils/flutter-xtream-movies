@@ -33,7 +33,7 @@ class Cast {
     String? job;
 
 
-    get fullBackdropImg {
+    get fullProfileImg {
       if (profilePath == null) {
         return 'https://i.stack.imgur.com/GNhxO.png';
       }
