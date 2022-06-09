@@ -4,10 +4,12 @@ import 'package:flutter_xtream_movies/models/models.dart';
 
 class MovieSlider extends StatelessWidget {
   final List<Movie> movies;
+  final String? title;
 
   const MovieSlider({
     Key? key,
-    required this.movies
+    required this.movies,
+    this.title,
   }) : super(key: key);
 
   @override
@@ -18,11 +20,12 @@ class MovieSlider extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Padding(
-            padding: EdgeInsets.only(left: 20, bottom: 10),
-            child: Text('Populares',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-          ),
+          if (title != null)
+            Padding(
+              padding: const EdgeInsets.only(left: 20, bottom: 10),
+              child: Text(title!,
+                  style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            ),
 
           // Slider horizontal con Poster de Peliculas
           Expanded(

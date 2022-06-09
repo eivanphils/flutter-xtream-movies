@@ -10,7 +10,7 @@ class MoviesProvider extends ChangeNotifier {
   final String _language = 'en-ES';
 
   List<Movie> onDisplayMovies = [];
-  List<Movie> onPopularMovies = [];
+  List<Movie> popularMovies = [];
 
   MoviesProvider() {
     getMoviesNowPlaying();
@@ -42,7 +42,7 @@ class MoviesProvider extends ChangeNotifier {
     final response = await http.get(url);
     final popularResponse = popularResponseFromJson(response.body);
 
-    onPopularMovies = popularResponse.results;
+    popularMovies = [...popularMovies, ...popularResponse.results];
 
     notifyListeners();
   }
