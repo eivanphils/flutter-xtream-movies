@@ -4,42 +4,56 @@
 
 import 'dart:convert';
 
-PersonResponse personResponseFromJson(String str) => PersonResponse.fromJson(json.decode(str));
+import 'package:intl/intl.dart';
+
+PersonResponse personResponseFromJson(String str) =>
+    PersonResponse.fromJson(json.decode(str));
 
 class PersonResponse {
-    PersonResponse({
-      required this.adult,
-      required this.alsoKnownAs,
-      required this.biography,
-      required this.birthday,
-      required this.deathday,
-      required this.gender,
-      required this.homepage,
-      required this.id,
-      required this.imdbId,
-      required this.knownForDepartment,
-      required this.name,
-      required this.placeOfBirth,
-      required this.popularity,
-      required this.profilePath,
-    });
+  PersonResponse({
+    required this.adult,
+    required this.alsoKnownAs,
+    required this.biography,
+    required this.birthday,
+    required this.deathday,
+    required this.gender,
+    this.homepage,
+    required this.id,
+    required this.imdbId,
+    required this.knownForDepartment,
+    required this.name,
+    required this.placeOfBirth,
+    required this.popularity,
+    required this.profilePath,
+  });
 
-    bool adult;
-    List<String> alsoKnownAs;
-    String biography;
-    DateTime birthday;
-    dynamic deathday;
-    int gender;
-    String homepage;
-    int id;
-    String imdbId;
-    String knownForDepartment;
-    String name;
-    String placeOfBirth;
-    double popularity;
-    String profilePath;
+  bool adult;
+  List<String> alsoKnownAs;
+  String biography;
+  DateTime birthday;
+  dynamic deathday;
+  int gender;
+  String? homepage;
+  int id;
+  String imdbId;
+  String knownForDepartment;
+  String name;
+  String placeOfBirth;
+  double popularity;
+  String profilePath;
 
-    factory PersonResponse.fromJson(Map<String, dynamic> json) => PersonResponse(
+  get fullProfileImg {
+    if (profilePath == null) {
+      return 'https://i.stack.imgur.com/GNhxO.png';
+    }
+    return 'https://image.tmdb.org/t/p/w500$profilePath';
+  }
+
+  get formatBirthday {
+    return DateFormat('dd-MM-yyyy').format(birthday);
+  }
+
+  factory PersonResponse.fromJson(Map<String, dynamic> json) => PersonResponse(
         adult: json["adult"],
         alsoKnownAs: List<String>.from(json["also_known_as"].map((x) => x)),
         biography: json["biography"],
@@ -54,5 +68,5 @@ class PersonResponse {
         placeOfBirth: json["place_of_birth"],
         popularity: json["popularity"].toDouble(),
         profilePath: json["profile_path"],
-    );
+      );
 }

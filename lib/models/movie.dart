@@ -40,7 +40,7 @@ class Movie {
     int voteCount;
 
     String _buildImage(String path) {
-      if (path.isEmpty) {
+      if (path == null) {
         return 'https://i.stack.imgur.com/GNhxO.png';
       }
       return 'https://image.tmdb.org/t/p/w500/$path';

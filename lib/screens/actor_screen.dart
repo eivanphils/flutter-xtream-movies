@@ -1,4 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'package:provider/provider.dart';
+
+import 'package:flutter_xtream_movies/models/models.dart';
+import 'package:flutter_xtream_movies/providers/movies_provider.dart';
 import 'package:flutter_xtream_movies/widgets/widgets.dart';
 
 class ActorScreen extends StatelessWidget {
@@ -6,41 +12,63 @@ class ActorScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final moviesProvider = Provider.of<MoviesProvider>(context, listen: false);
+    final personId =
+        int.parse(ModalRoute.of(context)!.settings.arguments.toString());
+
     final TextTheme textTheme = Theme.of(context).textTheme;
 
     return Scaffold(
-      appBar: Header(
-        appBar: AppBar(),
-      ),
-      body: Container(
-        margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-        child: Column(
-          children: [
-            _PosterAndTitle(textTheme: textTheme),
-            _OverView(textTheme: textTheme)
-          ],
+        appBar: Header(
+          appBar: AppBar(),
         ),
-      ),
-    );
+        body: SingleChildScrollView(
+          child: FutureBuilder(
+              future: moviesProvider.getActorInfo(personId),
+              builder: (_, AsyncSnapshot<PersonResponse> snapshot) {
+                if (!snapshot.hasData) {
+                  return const SizedBox(
+                    width: double.infinity,
+                    height: 180,
+                    child: CupertinoActivityIndicator(),
+                  );
+                }
+
+                final actor = snapshot.data!;
+
+                return Container(
+                  margin:
+                      const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+                  child: Column(
+                    children: [
+                      _PosterAndTitle(textTheme: textTheme, actor: actor),
+                      _OverView(textTheme: textTheme, actor: actor)
+                    ],
+                  ),
+                );
+              }),
+        ));
   }
 }
 
 class _PosterAndTitle extends StatelessWidget {
+  final TextTheme textTheme;
+  final PersonResponse actor;
+
   const _PosterAndTitle({
     Key? key,
+    required this.actor,
     required this.textTheme,
   }) : super(key: key);
-
-  final TextTheme textTheme;
 
   @override
   Widget build(BuildContext context) {
     return Row(children: [
       ClipRRect(
         borderRadius: BorderRadius.circular(20),
-        child: const FadeInImage(
-            placeholder: AssetImage('assets/loading.gif'),
-            image: AssetImage('assets/loading.gif'),
+        child: FadeInImage(
+            placeholder: const AssetImage('assets/loading.gif'),
+            image: NetworkImage(actor.fullProfileImg),
             width: 100,
             height: 150,
             fit: BoxFit.cover),
@@ -52,12 +80,18 @@ class _PosterAndTitle extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'actor.name',
+              actor.name,
               style: textTheme.headline5,
               overflow: TextOverflow.ellipsis,
             ),
             Text(
-              'Nacio el actor.birthday en actor.place_of_birth',
+              'Nacio el ${actor.formatBirthday}',
+              style: textTheme.subtitle1,
+              overflow: TextOverflow.ellipsis,
+              maxLines: 2,
+            ),
+            Text(
+              actor.placeOfBirth,
               style: textTheme.subtitle1,
               overflow: TextOverflow.ellipsis,
               maxLines: 2,
@@ -68,39 +102,33 @@ class _PosterAndTitle extends StatelessWidget {
                     size: 15, color: Colors.grey),
                 const SizedBox(width: 5),
                 Text(
-                  'actor.popularity.toString()',
+                  actor.popularity.toString(),
                   style: textTheme.caption,
                 )
               ],
             ),
-
-            Chip(
-              label: Text('actor.known_for_department')
-            )
+            Chip(label: Text(actor.knownForDepartment))
           ],
         ),
       ),
-      
     ]);
   }
 }
 
 class _OverView extends StatelessWidget {
+  final PersonResponse actor;
   final TextTheme textTheme;
-  const _OverView({
-    Key? key,
-    required this.textTheme
-  }) : super(key: key);
+  const _OverView({Key? key, required this.textTheme, required this.actor})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-      child: Text(
-          'Consequat quis amet id id. Nisi do id in mollit et est commodo. Fugiat labore officia consectetur laboris velit voluptate irure in ipsum elit. Mollit do sit et laborum commodo eiusmod esse cillum non esse.',
+        margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+        child: Text(
+          actor.biography,
           style: textTheme.subtitle1,
           textAlign: TextAlign.justify,
-        )
-    );
+        ));
   }
 }
