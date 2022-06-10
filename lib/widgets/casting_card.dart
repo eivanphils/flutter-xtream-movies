@@ -53,14 +53,17 @@ class _CastCard extends StatelessWidget {
       height: 100,
       child: Column(
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(20),
-            child: FadeInImage(
-              placeholder: const AssetImage('assets/no-image.jpg'),
-              image: NetworkImage(actor.fullProfileImg),
-              height: 140,
-              width: 90,
-              fit: BoxFit.cover,
+          GestureDetector(
+            onTap: () => Navigator.pushNamed(context, 'actor'),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: FadeInImage(
+                placeholder: const AssetImage('assets/no-image.jpg'),
+                image: NetworkImage(actor.fullProfileImg),
+                height: 140,
+                width: 90,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           const SizedBox(height: 5),
