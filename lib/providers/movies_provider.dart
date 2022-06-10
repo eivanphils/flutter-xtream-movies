@@ -64,6 +64,10 @@ class MoviesProvider extends ChangeNotifier {
   }
 
   Future<PersonResponse> getActorInfo(int personId) async {
+    if (actorsInfo.containsKey(personId)) {
+      return actorsInfo[personId]!;
+    }
+
     final jsonData = await _getJsonData('3/person/$personId');
     final personResponse = personResponseFromJson(jsonData);
 
