@@ -75,4 +75,11 @@ class MoviesProvider extends ChangeNotifier {
 
     return personResponse;
   }
+
+  Future<List<Video>> getTrailers(int movieId) async {
+    final jsonData = await _getJsonData('3/movie/$movieId/videos');
+    final videosResponse = videosResponseFromJson(jsonData);
+
+    return videosResponse.results;
+  }
 }
