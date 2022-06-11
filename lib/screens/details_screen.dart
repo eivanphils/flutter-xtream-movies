@@ -24,7 +24,7 @@ class DetailsScreen extends StatelessWidget {
             _OverView(movie: movie),
             CastingCard(movieId: movie.id),
 
-            // const VideoSlider(youtubeId: '123123')
+            const VideoSlider(youtubeId: 'qPYQr9fHDu4')
           ]))
         ],
       ),
