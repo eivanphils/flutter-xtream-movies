@@ -34,25 +34,26 @@ class VideoSlider extends StatelessWidget {
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Padding(
-                  padding: EdgeInsets.only(left: 20),
-                  child: Text('Trailers',
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                ),
-                Expanded(
-                  child: Padding(
-                    padding:
-                        const EdgeInsets.only(left: 10, top: 10, bottom: 10),
-                    child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: trailers.length,
-                        itemBuilder: (context, index) {
-                          final trailer = trailers[index];
-                          return _YoutubeVideo(youtubeId: trailer.key);
-                        }),
+                if (trailers.isNotEmpty)
+                  const Padding(
+                    padding: EdgeInsets.only(left: 20),
+                    child: Text('Trailers',
+                        style:
+                            TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                   ),
-                ),
+                  Expanded(
+                    child: Padding(
+                      padding:
+                          const EdgeInsets.only(left: 10, top: 10, bottom: 10),
+                      child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: trailers.length,
+                          itemBuilder: (context, index) {
+                            final trailer = trailers[index];
+                            return _YoutubeVideo(youtubeId: trailer.key);
+                          }),
+                    ),
+                  ),
               ],
             );
           },

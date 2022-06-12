@@ -31,7 +31,7 @@ class CastingCard extends StatelessWidget {
           width: double.infinity,
           height: 190,
           child: ListView.builder(
-              itemCount: 10,
+              itemCount: cast.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (_, int index) => _CastCard(cast[index])),
         );
