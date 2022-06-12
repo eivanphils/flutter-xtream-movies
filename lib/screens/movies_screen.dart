@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'package:flutter_xtream_movies/providers/movies_provider.dart';
+import 'package:flutter_xtream_movies/search/search_delegate.dart';
 import 'package:flutter_xtream_movies/router/app_routes.dart';
 import 'package:flutter_xtream_movies/widgets/widgets.dart';
 
@@ -24,7 +25,7 @@ class MoviesScreen extends StatelessWidget {
             widgets: [
               IconButton(
                 icon: const Icon(Icons.search_outlined),
-                onPressed: () => print('searching'),
+                onPressed: () => showSearch(context: context, delegate: MovieSearchDelegate()),
               ),
             ]),
         body: SingleChildScrollView(
