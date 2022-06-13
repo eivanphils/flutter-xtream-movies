@@ -69,8 +69,8 @@ class _PosterAndTitle extends StatelessWidget {
         child: FadeInImage(
             placeholder: const AssetImage('assets/loading.gif'),
             image: NetworkImage(actor.fullProfileImg),
-            width: 100,
-            height: 150,
+            width: 90,
+            height: 140,
             fit: BoxFit.cover),
       ),
       const SizedBox(width: 20),

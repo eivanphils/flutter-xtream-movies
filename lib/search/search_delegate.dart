@@ -49,16 +49,21 @@ class MovieSearchDelegate extends SearchDelegate {
               itemCount: movies.length,
               itemBuilder: (context, int index) {
                 final movie = movies[index];
+                movie.heroId = 'search-${movie.id}';
                 return ListTile(
-                  leading: FadeInImage(
-                    placeholder: const AssetImage('assets/no-image.jpg'),
-                    image: NetworkImage(movie.fullPosterImg),
-                    fit: BoxFit.contain,
-                    width: 60,
+                  leading: Hero(
+                    tag: movie.heroId!,
+                    child: FadeInImage(
+                      placeholder: const AssetImage('assets/no-image.jpg'),
+                      image: NetworkImage(movie.fullPosterImg),
+                      fit: BoxFit.contain,
+                      width: 60,
+                    ),
                   ),
                   title: Text(movie.title),
                   subtitle: Text(movie.originalTitle),
-                  onTap: () => Navigator.pushNamed(context, 'detail', arguments: movie),
+                  onTap: () =>
+                      Navigator.pushNamed(context, 'detail', arguments: movie),
                 );
               },
               separatorBuilder: (_, __) => const Divider());
