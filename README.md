@@ -34,6 +34,15 @@ Esta app contiene una gran variedad de Widgets los cuales son:
 
 ## Capturas de pantalla
 
+<img src="https://github.com/eivanphils/flutter-xtream-movies/blob/master/assets/screenshoots/1.png" width="200">     
+<img src="https://github.com/eivanphils/flutter-xtream-movies/blob/master/assets/screenshoots/2.png" width="200">     
+<img src="https://github.com/eivanphils/flutter-xtream-movies/blob/master/assets/screenshoots/3.png" width="200">     
+<img src="https://github.com/eivanphils/flutter-xtream-movies/blob/master/assets/screenshoots/4.png" width="200">     
+<img src="https://github.com/eivanphils/flutter-xtream-movies/blob/master/assets/screenshoots/5.png" width="200">     
+<img src="https://github.com/eivanphils/flutter-xtream-movies/blob/master/assets/screenshoots/6.png" width="200">     
+<img src="https://github.com/eivanphils/flutter-xtream-movies/blob/master/assets/screenshoots/7.png" width="200">     
+<img src="https://github.com/eivanphils/flutter-xtream-movies/blob/master/assets/screenshoots/8.png" width="200">     
+
 ![1](https://user-images.githubusercontent.com/1909869/173444767-359f4b1f-8ca6-478d-9a8d-be49caab3ce6.png)
 ![3](https://user-images.githubusercontent.com/1909869/173444782-6a32cde1-e28a-4d92-bbd5-ed251f0b6c1d.png)
 ![4](https://user-images.githubusercontent.com/1909869/173444784-63119124-7c2f-4621-be3c-a58d53875de9.png)
