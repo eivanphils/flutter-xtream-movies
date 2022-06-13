@@ -11,7 +11,6 @@ class AppRoutes {
     RouteOption(name: 'home', route: 'home', screen: const HomeScreen()),
     RouteOption(name: 'movies', route: 'movies', screen: const MoviesScreen()),
     RouteOption(name: 'detail', route: 'detail', screen: const DetailsScreen()),
-    RouteOption(name: 'settings', route: 'settings', screen: const SettingsScreenScreen()),
     RouteOption(name: 'actor', route: 'actor', screen: const ActorScreen()),
   ];
 

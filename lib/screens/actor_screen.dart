@@ -85,7 +85,7 @@ class _PosterAndTitle extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
             ),
             Text(
-              'Nacio el ${actor.formatBirthday}',
+              'Born in ${actor.formatBirthday}',
               style: textTheme.subtitle1,
               overflow: TextOverflow.ellipsis,
               maxLines: 2,

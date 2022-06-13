@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 
 import 'package:flutter_xtream_movies/providers/movies_provider.dart';
 import 'package:flutter_xtream_movies/search/search_delegate.dart';
-import 'package:flutter_xtream_movies/router/app_routes.dart';
 import 'package:flutter_xtream_movies/widgets/widgets.dart';
 
 class MoviesScreen extends StatelessWidget {
@@ -17,11 +16,6 @@ class MoviesScreen extends StatelessWidget {
     return Scaffold(
         appBar: Header(
             appBar: AppBar(),
-            leading: IconButton(
-              icon: const Icon(Icons.settings),
-              onPressed: () =>
-                  Navigator.pushNamed(context, AppRoutes.settingsRoute),
-            ),
             widgets: [
               IconButton(
                 icon: const Icon(Icons.search_outlined),
@@ -36,7 +30,7 @@ class MoviesScreen extends StatelessWidget {
             // Slider de peliculas
             MovieSlider(
               movies: moviesProvider.popularMovies,
-              title: 'Populares',
+              title: 'Popular',
               onNextPage: () => moviesProvider.getPopularMovies(),
             ),
           ]),
