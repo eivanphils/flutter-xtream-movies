@@ -43,14 +43,6 @@ Esta app contiene una gran variedad de Widgets los cuales son:
 <img src="https://github.com/eivanphils/flutter-xtream-movies/blob/master/assets/screenshoots/7.png" width="200">     
 <img src="https://github.com/eivanphils/flutter-xtream-movies/blob/master/assets/screenshoots/8.png" width="200">     
 
-![1](https://user-images.githubusercontent.com/1909869/173444767-359f4b1f-8ca6-478d-9a8d-be49caab3ce6.png)
-![3](https://user-images.githubusercontent.com/1909869/173444782-6a32cde1-e28a-4d92-bbd5-ed251f0b6c1d.png)
-![4](https://user-images.githubusercontent.com/1909869/173444784-63119124-7c2f-4621-be3c-a58d53875de9.png)
-![5](https://user-images.githubusercontent.com/1909869/173444787-8247c29f-d34f-430d-8cf4-7e9d626b5b5c.png)
-![8](https://user-images.githubusercontent.com/1909869/173444789-7436c1cc-0f86-4f4f-978d-a82f8eb608d1.png)
-
-
-
 https://user-images.githubusercontent.com/1909869/173445991-ea5f8e87-4141-4612-b05e-d0cedeb8f8b7.mp4
 
 
