@@ -32,6 +32,27 @@ Esta app contiene una gran variedad de Widgets los cuales son:
 - Buscador de peliculas
   - Listado de sugerencias segun la busqueda realizada.
 
+## Estructura de directorio
+
+| Directorio    | Explicación |
+| ------------- |:-------------:|
+| assets  | Contiene todas las imagenes png, svg o gif |
+| android, ios, web | Contiene todas las configuraciones de la plataforma que genera flutter automáticamente |
+| lib     | Contiene toda la lógica de la aplicación |
+
+Luego el directorio lib
+
+| Directorio    | Explicación |
+| ------------- |:-------------:|
+| helpers   | Contiene configuraciones de funciones de uso común |
+| models    | Contiene todas las clases que representan el modelo de un objeto como películas, actor, respuestas de peticiones |
+| providers | Contiene todas los providers donde se realizan las peticiones http |
+| router    | Contiene todas las configuraciones de las rutas de la aplicación |
+| screens   | Contiene todas las clases de cada pantalla de la app |
+| theme     | Contiene todas las configuraciones del tema de la app |
+| widgets   | Contiene todos los  widgets personalizados que se reutilizan en distintas secciones de la app |
+
+
 ## Capturas de pantalla
 
 <img src="https://github.com/eivanphils/flutter-xtream-movies/blob/master/assets/screenshoots/1.png" width="200">     
