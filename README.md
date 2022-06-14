@@ -32,6 +32,21 @@ Esta app contiene una gran variedad de Widgets los cuales son:
 - Buscador de peliculas
   - Listado de sugerencias segun la busqueda realizada.
 
+## Paquetes de terceros
+
+En el proyecto se han utilizado algunos paquetes de terceros que fueron de mucha ayuda para la construcción final.
+
+A continuación encontrará la información sobre estos paquetes.
+
+| Paquete    | Explicación |
+| ------------- |:-------------:|
+| cupertino_icons  | Iconos de cupertino |
+| card_swiper | Usado para mostrar un tipo de carrusel |
+| http     | Usado para peticiones http |
+| provider     | Para impletementar la lógica de escuchar las respuestas de las peticiones http |
+| intl     | Usado para formatear las fechas |
+| youtube_player_flutter | Usado para incrustar video de youtube |
+
 ## Estructura de directorio
 
 | Directorio    | Explicación |
