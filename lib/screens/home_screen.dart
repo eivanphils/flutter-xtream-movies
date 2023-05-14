@@ -13,11 +13,11 @@ class HomeScreen extends StatelessWidget {
       appBar: Header(
         appBar: AppBar()
       ),
-      body: Column(
+      body: const Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           // Titulo central del home
-          const Center(
+          Center(
             child: Padding(
               padding: EdgeInsets.only(bottom: 10),
               child: Text("Who's Watching?", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: AppTheme.darkBlue)),
@@ -27,14 +27,14 @@ class HomeScreen extends StatelessWidget {
           // Cards de usuarios
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
+            children: [
               UserCard(image: 'assets/queen.png', name: 'The Queen'),
               UserCard(image: 'assets/anakin.png', name: 'Anakin'),
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
+            children: [
               UserCard(image: 'assets/princess.png', name: 'The princess'),
               UserCard(image: 'assets/dark.png', name: 'Dark'),
             ],

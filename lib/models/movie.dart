@@ -42,7 +42,7 @@ class Movie {
   String? heroId;
 
   String _buildImage(String path) {
-    if (path == null || path.isEmpty || path == 'null') {
+    if (path.isEmpty || path == 'null') {
       return 'https://i.stack.imgur.com/GNhxO.png';
     }
     return 'https://image.tmdb.org/t/p/w500/$path';

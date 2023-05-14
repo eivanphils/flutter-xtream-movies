@@ -43,10 +43,10 @@ class PersonResponse {
   String profilePath;
 
   get fullProfileImg {
-    if (profilePath == null) {
-      return 'https://i.stack.imgur.com/GNhxO.png';
+    if (profilePath.isNotEmpty) {
+      return 'https://image.tmdb.org/t/p/w500$profilePath';
     }
-    return 'https://image.tmdb.org/t/p/w500$profilePath';
+      return 'https://i.stack.imgur.com/GNhxO.png';
   }
 
   get formatBirthday {

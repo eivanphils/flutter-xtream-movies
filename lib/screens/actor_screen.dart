@@ -81,18 +81,18 @@ class _PosterAndTitle extends StatelessWidget {
           children: [
             Text(
               actor.name,
-              style: textTheme.headline5,
+              style: textTheme.headlineSmall,
               overflow: TextOverflow.ellipsis,
             ),
             Text(
               'Born in ${actor.formatBirthday}',
-              style: textTheme.subtitle1,
+              style: textTheme.titleMedium,
               overflow: TextOverflow.ellipsis,
               maxLines: 2,
             ),
             Text(
               actor.placeOfBirth,
-              style: textTheme.subtitle1,
+              style: textTheme.titleMedium,
               overflow: TextOverflow.ellipsis,
               maxLines: 2,
             ),
@@ -103,7 +103,7 @@ class _PosterAndTitle extends StatelessWidget {
                 const SizedBox(width: 5),
                 Text(
                   actor.popularity.toString(),
-                  style: textTheme.caption,
+                  style: textTheme.bodySmall,
                 )
               ],
             ),
@@ -127,7 +127,7 @@ class _OverView extends StatelessWidget {
         margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
         child: Text(
           actor.biography,
-          style: textTheme.subtitle1,
+          style: textTheme.titleMedium,
           textAlign: TextAlign.justify,
         ));
   }

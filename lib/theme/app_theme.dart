@@ -23,7 +23,7 @@ class AppTheme {
     // TextButtons
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
-        primary: lightBlue
+        foregroundColor: lightBlue
       )
     )
   );

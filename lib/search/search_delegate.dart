@@ -79,9 +79,9 @@ class _EmptyResults extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: const [
+      children: [
         Center(child: Image(image: AssetImage('assets/empty.png'))),
         SizedBox(height: 10),
         Text(

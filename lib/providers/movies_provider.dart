@@ -114,6 +114,6 @@ class MoviesProvider extends ChangeNotifier {
     final timer = Timer.periodic(const Duration(milliseconds: 300), (_) {
       debouncer.value = searchTerm;
     });
-    Future.delayed(Duration(milliseconds: 301)).then((_) => timer.cancel());
+    Future.delayed(const Duration(milliseconds: 301)).then((_) => timer.cancel());
   }
 }
