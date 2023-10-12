@@ -89,6 +89,7 @@ class _YoutubeVideoState extends State<_YoutubeVideo> {
       child: Container(
         width: 300,
         height: 200,
+        margin: const EdgeInsets.only(left: 10, right: 10, bottom: 20),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(10),
           child: YoutubePlayer(
@@ -100,7 +101,6 @@ class _YoutubeVideoState extends State<_YoutubeVideo> {
             ),
           ),
         ),
-        margin: const EdgeInsets.only(left: 10, right: 10, bottom: 20),
       ),
     );
   }
